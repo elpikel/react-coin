@@ -10,7 +10,7 @@ const Table = (props) => {
   return (
     <div className="Table-container">
       <table className="Table">
-        <thead className="Table-">
+        <thead className="Table-head">
           <tr>
             <th>Cryptocurrency</th>
             <th>Price</th>
