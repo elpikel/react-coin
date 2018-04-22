@@ -46,16 +46,6 @@ class List extends React.Component {
     });
   }
 
-  renderChangePercentage(percent) {
-    if(percent > 0) {
-      return <span className="percent-raised">{percent}% &uarr;</span>
-    } else if(percent < 0) {
-      return <span className="percent-fallen">{percent}% &darr;</span>
-    } else {
-      return <span>{percent}</span>
-    }
-  }
-
   handlePaginationClick = (direction) => {
     const nextPage = direction == 'next' ? this.state.page + 1 : this.state.page - 1;
 
@@ -78,12 +68,11 @@ class List extends React.Component {
     return (
       <div>
         <Table
-          renderChangePercentage={this.renderChangePercentage}
           currencies={currencies}/>
         <Pagination
           page={page}
           totalPages={totalPages}
-        handlePaginationClick={this.handlePaginationClick}/>
+          handlePaginationClick={this.handlePaginationClick}/>
       </div>
     );
   }
